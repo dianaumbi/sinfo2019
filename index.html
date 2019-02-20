@@ -51,6 +51,7 @@
       window.onload = function() {
         let engine = new Calculator(function(state) {
           console.log2(state);
+          document.title = `Simple calculator: ${state.displayText}`;
           let el = document.querySelector('#displaytext')
           if ( el ) {
             el.innerHTML = state.displayText;
