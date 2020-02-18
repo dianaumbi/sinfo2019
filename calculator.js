@@ -37,7 +37,7 @@ Calculator.prototype.setOperation = function(operator) {
 }
 Calculator.prototype.execute = function() {
   if ( typeof(this.state.fn) === 'undefined') {
-    this.setErr();
+    // ignore undefined operations
     return;
   }
   let arg1 = Number.parseFloat(this.state.displayText);
