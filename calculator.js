@@ -19,6 +19,7 @@ Calculator.prototype.appendDigit = function(digit) {
   this.setState({displayText});
   return;
 }
+
 Calculator.prototype.setOperation = function(operator) {
   let arg0 = Number.parseFloat(this.state.displayText);
   let fn;
@@ -27,7 +28,8 @@ Calculator.prototype.setOperation = function(operator) {
       fn = sum.bind(this, arg0);
       break;
     default:
-      this.setErr();
+      console.error(`unknown operation: ${operator}`, this)
+      this.setErr()
       return;
   }
   this.setState({displayText: '0', arg0: arg0, fn: fn});
