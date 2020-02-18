@@ -32,7 +32,7 @@ Calculator.prototype.setOperation = function(operator) {
       this.setErr()
       return;
   }
-  this.setState({displayText: '0', arg0: arg0, fn: fn});
+  this.setState({displayText: '0', fn})
   return;
 }
 Calculator.prototype.execute = function() {
@@ -42,15 +42,15 @@ Calculator.prototype.execute = function() {
   }
   let arg1 = Number.parseFloat(this.state.displayText);
   let result = this.state.fn(arg1);
-  this.setState({displayText:''+result, arg0: arg1, fn: undefined});
+  this.setState({displayText:''+result, fn: undefined});
 };
 
 Calculator.prototype.setErr = function(displayText='err') {
-  this.setState({displayText:displayText, arg0: 0, fn: undefined});
+  this.setState({displayText:displayText, fn: undefined});
 }
 
 Calculator.prototype.clear = function() {
-  this.setState({displayText:'0', arg0: undefined, fn: undefined});
+  this.setState({displayText:'0', fn: undefined});
 };
 
 function notImplemented() {
