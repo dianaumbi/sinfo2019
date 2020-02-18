@@ -42,13 +42,14 @@
 
 
       window.onload = function() {
+        let elDisplay = document.querySelector('#displaytext')
         let engine = new Calculator(function(state) {
           console.debug(state);
           document.title = `Simple calculator: ${state.displayText}`;
-          let el = document.querySelector('#displaytext')
-          if ( el ) {
-            el.innerHTML = state.displayText;
+          if ( elDisplay ) {
+            elDisplay.innerHTML = state.displayText
           }
+          return;
         });
         let DATA = {
           'mc': { text: 'Mc', fn: () => { engine.clear(); } },
