@@ -4,8 +4,8 @@ function sum(a, b) { return a+b; }
 
 function Calculator(onStateChange) {
   this.onStateChange = onStateChange
-  this.state = { displayText: '0', arg0: undefined, fn: undefined };
-  this.onStateChange(this.state);
+  this.state = {}
+  this.clear()
   return;
 }
 
@@ -44,11 +44,11 @@ Calculator.prototype.execute = function() {
 };
 
 Calculator.prototype.setErr = function(displayText='err') {
-  this.setState({displayText:displayText, arg0: undefined, fn: undefined});
+  this.setState({displayText:displayText, arg0: 0, fn: undefined});
 }
 
 Calculator.prototype.clear = function() {
-  this.setState({displayText:'', arg0: undefined, fn: undefined});
+  this.setState({displayText:'0', arg0: undefined, fn: undefined});
 };
 
 function notImplemented() {
