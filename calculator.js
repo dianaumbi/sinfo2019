@@ -15,8 +15,9 @@ Calculator.prototype.setState = function(value) {
 }
 
 Calculator.prototype.appendDigit = function(digit) {
-  this.setState({displayText: this.state.displayText + digit});
-
+  let displayText = this.state.displayText == '0' ? digit: this.state.displayText + digit;
+  this.setState({displayText});
+  return;
 }
 Calculator.prototype.setOperation = function(operator) {
   let arg0 = Number.parseFloat(this.state.displayText);
