@@ -73,25 +73,34 @@ table{
 /* GO! */
 
 #displaytext {
-  background-color: 111;
   border: 1px solid #999;
-  margin: auto;
-  width: 11em;;
+  margin: 15vh auto auto auto;
+  width: 15vw;
   text-align: right;
-  padding: 0 0.5em 0 0.5em;
-  min-height: 1em;
+  padding: 0.5rem;
+  min-height: 1rem;
+  font-size: 2rem;
 }
 
 #buttonbox {
   margin: auto;
-  width: 12em;;
+  max-width: 15vw;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: .8em;
-  margin-top: 1.2em;
+  grid-gap: .8rem;
+  margin-top: 1.2rem;
   /* justify-items: center; */
   justify-content: space-evenly;
 
+}
+
+#buttonbox > button {
+  font-size: 1.5rem;
+  min-width: 2rem;
+  min-height:: 2rem;
+  border-radius: 5px;
+  padding: 0.2rem;
+  background-color: #EEE;
 }
 
 .c1 { grid-column: 1; }
