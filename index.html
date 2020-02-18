@@ -44,7 +44,7 @@
       window.onload = function() {
         let elDisplay = document.querySelector('#displaytext')
         let engine = new Calculator(function(state) {
-          console.debug(state);
+          console.debug('ui update listener', state);
           document.title = `Simple calculator: ${state.displayText}`;
           if ( elDisplay ) {
             elDisplay.innerHTML = state.displayText
