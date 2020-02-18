@@ -54,5 +54,6 @@ Calculator.prototype.clear = function() {
 };
 
 function notImplemented() {
-  window.alert(`not implemented: ${this.text}`);
+  console.debug('not implementend')
+  Promise.resolve().then(() => { window.alert(`not implemented: ${this.text}`) });
 };
